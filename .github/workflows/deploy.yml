@@ -1,0 +1,42 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          cache: npm
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - run: npm run build --if-present
+
+      - name: Deploy Function
+        id: sls-func
+        uses: yc-actions/yc-sls-function@v1.0.1
+        with:
+          yc-sa-json-credentials: ${{secrets.YC_SA_JSON_CREDENTIALS}}
+          folder-id: b1g4s4k8tj83buc1hdoq
+          function-name: notification-center
+          runtime: nodejs16
+          memory: 256Mb
+          execution-timeout: 20
+          entrypoint: dist/index.handler
+          service-account: aje38cdteqcfo55pe02h
+          include: |
+            ./dist
+            package.json
+          exclude: |
+            **/*.ts
+          tags: |
+            ${{ github.sha }}

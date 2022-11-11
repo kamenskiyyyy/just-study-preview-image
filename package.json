@@ -1,0 +1,31 @@
+{
+  "name": "just-study-preview-image",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc -b ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamenskiyyyy/just-study-notification-center.git"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.13",
+    "puppeteer": "^19.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/release-notes-generator": "10.0.3",
+    "@types/node": "18.11.9",
+    "semantic-release": "19.0.5",
+    "typescript": "4.8.4"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}
