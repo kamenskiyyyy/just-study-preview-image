@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "lib": ["es5", "es6", "es2019"],
+    "lib": ["es5", "es6", "es2019", "dom"],
     "target": "es2019",
     "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react"
+    "jsx": "react",
+    "types": ["node"]
   },
   "include": [
     "src/**/*"
