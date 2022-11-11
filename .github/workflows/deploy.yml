@@ -35,6 +35,7 @@ jobs:
           service-account: aje38cdteqcfo55pe02h
           environment: |
             PUPPETEER_SKIP_DOWNLOAD=true
+            NODE_CHROMIUM_REVISION=1056772
           include: |
             ./dist
             package.json
