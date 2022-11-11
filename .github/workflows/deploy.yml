@@ -27,7 +27,7 @@ jobs:
         with:
           yc-sa-json-credentials: ${{secrets.YC_SA_JSON_CREDENTIALS}}
           folder-id: b1g4s4k8tj83buc1hdoq
-          function-name: notification-center
+          function-name: render-preview-image
           runtime: nodejs16
           memory: 256Mb
           execution-timeout: 20
