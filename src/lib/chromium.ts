@@ -1,14 +1,10 @@
-import core from 'puppeteer';
-
-let _page: core.Page | null;
+import PCR from 'puppeteer-chromium-resolver';
 
 async function getPage() {
-    if (_page) {
-        return _page;
-    }
-    const browser = await core.launch({ ignoreDefaultArgs: ['--disable-extensions'], headless: true });
-    _page = await browser.newPage();
-    return _page;
+    const stats = await PCR();
+
+    const browser = await stats.puppeteer.launch({ ignoreDefaultArgs: ['--disable-extensions'], headless: true });
+    return await browser.newPage();
 }
 
 export async function getScreenshot(html: string) {
