@@ -1,5 +1,4 @@
 import { Box, Stack, Typography } from "@mui/material";
-import SvgJustStudyLogo from "./SvgJustStudyLogo";
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
 
@@ -16,7 +15,6 @@ export const Logo = () => {
                     p={1}
                     bgcolor={theme.palette.background.paper}
                     borderRadius={20}>
-                    <SvgJustStudyLogo width={60} />
                     <Typography variant="h2">Just Study</Typography>
                 </Stack>
             </Box>
