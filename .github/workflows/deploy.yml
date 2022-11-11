@@ -33,6 +33,8 @@ jobs:
           execution-timeout: 20
           entrypoint: dist/index.handler
           service-account: aje38cdteqcfo55pe02h
+          environment: |
+            PUPPETEER_SKIP_DOWNLOAD=true
           include: |
             ./dist
             package.json
